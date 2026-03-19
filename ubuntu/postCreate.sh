@@ -22,8 +22,9 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 ## Config
 
-mkdir -p ~/.claude
-cp ~/claude-credentials.json ~/.claude/.credentials.json
+# bind mounted ~/.claude/.credentials.json so need to update ~/.claude permissions
+sudo chown $USER ~/.claude
+sudo chgrp $USER ~/.claude
 
 # sudo apt install -y moreutils
 # jq '. + {"hasCompletedOnboarding": true}' ~/.claude.json | sponge ~/.claude.json

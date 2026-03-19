@@ -73,7 +73,7 @@ grep -qF 'ANDROID_SDK_ROOT' ~/.profile || printf '\n%s\n' "$ANDROID_ENV_BLOCK" >
 # └─────────┘
 
 # Flutter SDK
-FLUTTER_TAR='flutter.tar.xz'
+FLUTTER_TAR=$(mktemp)
 curl -fsSL -o "$FLUTTER_TAR" \
   "https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.41.4-stable.tar.xz"
 tar -xf "$FLUTTER_TAR" -C "$HOME"
@@ -107,8 +107,9 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 ## Config
 
-mkdir -p ~/.claude
-cp ~/claude-credentials.json ~/.claude/.credentials.json
+# bind mounted ~/.claude/.credentials.json so need to update ~/.claude permissions
+sudo chown $USER ~/.claude
+sudo chgrp $USER ~/.claude
 
 # sudo apt install -y moreutils
 # jq '. + {"hasCompletedOnboarding": true}' ~/.claude.json | sponge ~/.claude.json
