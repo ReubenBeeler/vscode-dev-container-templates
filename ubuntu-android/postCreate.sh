@@ -5,9 +5,7 @@ set -e
 # │ Act │ (run GitHub Actions locally)
 # └─────┘
 
-curl -fsSL https://raw.githubusercontent.com/nektos/act/master/install.sh | sudo bash
-sudo mv bin/act /usr/local/bin
-rmdir bin
+curl -fsSL https://raw.githubusercontent.com/nektos/act/master/install.sh | sudo bash -s -- -b /usr/local/bin
 
 # ┌─────────┐
 # │ Android │

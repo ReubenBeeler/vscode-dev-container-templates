@@ -4,7 +4,6 @@
 	"name": "Ubuntu Android",
 	"image": "mcr.microsoft.com/devcontainers/base:noble",
 	"features": {
-		"ghcr.io/dhoeric/features/act:1": {},
 		"ghcr.io/hwaien/devcontainer-features/match-host-time-zone": {},
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
 	},
