@@ -126,6 +126,8 @@ grep -qxF "$FLUTTER_PATH_LINE" ~/.profile || echo "$FLUTTER_PATH_LINE" >> ~/.pro
 
 export PATH="$HOME/flutter/bin:$PATH"
 
+flutter --disable-analytics
+
 # Wire Flutter to the SDK we just installed
 flutter config --android-sdk "$ANDROID_SDK_ROOT" --enable-linux-desktop --no-analytics
 
