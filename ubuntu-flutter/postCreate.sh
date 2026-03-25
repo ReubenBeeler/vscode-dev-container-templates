@@ -106,7 +106,7 @@ _tmp=$(mktemp --suffix='.deb')
 curl -fsSL -o "$_tmp" https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt-get install -y "$_tmp" > /dev/null
 rm "$_tmp"
-unset "$_tmp"
+unset _tmp
 
 # ┌─────────┐
 # │ Flutter │
